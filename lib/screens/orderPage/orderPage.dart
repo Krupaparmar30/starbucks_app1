@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:starbucks_app/screens/detail/detail.dart';
+import 'package:starbucks_app/screens/drink.dart';
+import 'package:starbucks_app/screens/tab.dart';
 import 'package:starbucks_app/utils/globle/globle.dart';
 
 class orderPage extends StatefulWidget {
@@ -155,382 +158,38 @@ class _orderPageState extends State<orderPage> {
                       ),
                       Tab(
                         text: "Drink",
+                      ),
+                      Tab(
+                        text: "Food",
+                      ),
+                      Tab(
+                        text: "Merchandise",
+                      ),
+                      Tab(
+                        text: "Coffee At Home",
+                      ),
+                      Tab(
+                        text: "Ready to Eat",
                       )
                     ],
                   ),
                 ),
-                Container(
-                  height: h * 0.999,
-                  width: w * 0.999,
+                SizedBox(
+                  height: h*1,
+                  width: w*1,
                   child: TabBarView(
                     children: [
-                      ListView.builder(
-                        itemBuilder: (context, index) {
-                          return Padding(
-                            padding: const EdgeInsets.only(
-                                left: 15, right: 15, top: 10),
-                            child: Container(
-                              height: h * 0.3,
-                              width: w * 0.3,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white,
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey.shade400,
-                                      offset: Offset(0, 2),
-                                      blurRadius: 2,
-                                      spreadRadius: 2),
-                                ],
-                              ),
-                              child: Column(
-                                children: [
-                                  Text(
-                                    '${ProductDetail[index]['productName']}',
-                                    maxLines: 1,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
-                      ),
-                      ListView.builder(
-                        itemCount: ProductDetail.length,
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Text('vddv'),
-                              Column(
-                                children: [
-                                  Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 15, right: 15, top: 10),
-                                      child: Column(children: [
-                                        Container(
-                                          height: h * 0.35,
-                                          width: w * 1,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              color: Colors.white,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: Colors.grey.shade400,
-                                                    offset: Offset(0, 2),
-                                                    blurRadius: 2,
-                                                    spreadRadius: 2)
-                                              ]),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Container(
-                                                    height: h * 0.33,
-                                                    width: w * 0.32,
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                            BorderRadius.only(
-                                                                topLeft: Radius
-                                                                    .circular(
-                                                                        10),
-                                                                bottomLeft: Radius
-                                                                    .circular(
-                                                                        10))),
-                                                  ),
-                                                  Container(
-                                                    height: h * 0.350,
-                                                    width: w * 0.595,
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                            BorderRadius.only(
-                                                                topRight: Radius
-                                                                    .circular(
-                                                                        10),
-                                                                bottomRight: Radius
-                                                                    .circular(
-                                                                        10))),
-                                                    child: Column(
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  right: 35,
-                                                                  top: 30),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['productName']}",
-                                                            maxLines: 1,
-                                                            style: TextStyle(
-                                                                fontSize: 18,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  right: 175),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['size']}",
-                                                            maxLines: 1,
-                                                            style: TextStyle(
-                                                                fontSize: 15),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          height: h * 0.02,
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  right: 10),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['description']}",
-                                                            maxLines: 2,
-                                                            style: TextStyle(
-                                                                fontSize: 15),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          height: h * 0.03,
-                                                        ),
-                                                        Row(
-                                                          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                                  const EdgeInsets
-                                                                      .only(
-                                                                      right:
-                                                                          20),
-                                                              child: Text(
-                                                                "${save[selIndex][index]['price']}",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold),
-                                                              ),
-                                                            ),
-                                                            SizedBox(
-                                                              width: w * 0.140,
-                                                            ),
-                                                            Container(
-                                                              height: h * 0.050,
-                                                              width: w * 0.250,
-                                                              decoration: BoxDecoration(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade400,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              20)),
-                                                              child: Center(
-                                                                child: Text(
-                                                                  'Add item',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            )
-                                                          ],
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ]))
-                                ],
-                              )
-                            ],
-                          );
-                        },
-                      ),
-                      ListView.builder(
-                        itemCount: ProductDetail.length,
-                        itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              Text('vddv'),
-                              Column(
-                                children: [
-                                  Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 15, right: 15, top: 10),
-                                      child: Column(children: [
-                                        Container(
-                                          height: h * 0.35,
-                                          width: w * 1,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                              BorderRadius.circular(10),
-                                              color: Colors.white,
-                                              boxShadow: [
-                                                BoxShadow(
-                                                    color: Colors.grey.shade400,
-                                                    offset: Offset(0, 2),
-                                                    blurRadius: 2,
-                                                    spreadRadius: 2)
-                                              ]),
-                                          child: Column(
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  Container(
-                                                    height: h * 0.33,
-                                                    width: w * 0.32,
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                        BorderRadius.only(
-                                                            topLeft: Radius
-                                                                .circular(
-                                                                10),
-                                                            bottomLeft: Radius
-                                                                .circular(
-                                                                10))),
-                                                  ),
-                                                  Container(
-                                                    height: h * 0.350,
-                                                    width: w * 0.595,
-                                                    decoration: BoxDecoration(
-                                                        color: Colors.white,
-                                                        borderRadius:
-                                                        BorderRadius.only(
-                                                            topRight: Radius
-                                                                .circular(
-                                                                10),
-                                                            bottomRight: Radius
-                                                                .circular(
-                                                                10))),
-                                                    child: Column(
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                          const EdgeInsets
-                                                              .only(
-                                                              right: 35,
-                                                              top: 30),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['productName']}",
-                                                            maxLines: 1,
-                                                            style: TextStyle(
-                                                                fontSize: 18,
-                                                                fontWeight:
-                                                                FontWeight
-                                                                    .bold),
-                                                          ),
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                          const EdgeInsets
-                                                              .only(
-                                                              right: 175),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['size']}",
-                                                            maxLines: 1,
-                                                            style: TextStyle(
-                                                                fontSize: 15),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          height: h * 0.02,
-                                                        ),
-                                                        Padding(
-                                                          padding:
-                                                          const EdgeInsets
-                                                              .only(
-                                                              right: 10),
-                                                          child: Text(
-                                                            "${save[selIndex][index]['description']}",
-                                                            maxLines: 2,
-                                                            style: TextStyle(
-                                                                fontSize: 15),
-                                                          ),
-                                                        ),
-                                                        SizedBox(
-                                                          height: h * 0.03,
-                                                        ),
-                                                        Row(
-                                                          //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                                          children: [
-                                                            Padding(
-                                                              padding:
-                                                              const EdgeInsets
-                                                                  .only(
-                                                                  right:
-                                                                  20),
-                                                              child: Text(
-                                                                "${save[selIndex][index]['price']}",
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                        .black,
-                                                                    fontWeight:
-                                                                    FontWeight
-                                                                        .bold),
-                                                              ),
-                                                            ),
-                                                            SizedBox(
-                                                              width: w * 0.140,
-                                                            ),
-                                                            Container(
-                                                              height: h * 0.050,
-                                                              width: w * 0.250,
-                                                              decoration: BoxDecoration(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade400,
-                                                                  borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                      20)),
-                                                              child: Center(
-                                                                child: Text(
-                                                                  'Add item',
-                                                                  style:
-                                                                  TextStyle(
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            )
-                                                          ],
-                                                        )
-                                                      ],
-                                                    ),
-                                                  )
-                                                ],
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                      ]))
-                                ],
-                              )
-                            ],
-                          );
-                        },
-                      )
+                      tabPage(),
+                      drinkPage()
+
+
+
+
+
 
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
@@ -541,10 +200,12 @@ class _orderPageState extends State<orderPage> {
 }
 
 List<GlobalKey> ordKey = List.generate(
-  ProductDetail.length,
+  save.length,
   (index) => GlobalKey(),
 );
 bool selectImg = true;
 int index2 = 0;
 
 int selIndex = 0;
+//String Si = '${save[selIndex][index2]['img']}';
+int index=0;

@@ -1,4 +1,4 @@
-List ProductDetail=[
+List<Map<dynamic ,dynamic>> ProductDetail=[
   {
     "productName":"Chemex India Estates Blend",
     "category":"drink",
@@ -313,13 +313,10 @@ List ProductDetail=[
   },
 ];
 
-List save=[ProductDetail,SandwichesList];
 
 
 
-
-
-List SandwichesList=[
+List<Map<dynamic ,dynamic>> SandwichesList=[
   {
     "productName":"Tandoori Soya Chaap Wrap",
     "category":"drink",
@@ -355,3 +352,6 @@ List SandwichesList=[
   },
 
 ];
+List save=[ProductDetail];
+
+List cartList=[];
